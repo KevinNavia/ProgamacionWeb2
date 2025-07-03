@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mis Toppings</title>
+  </head>
+
+  <body>
+    <secction>
+        <h1>contar caracteres</h1>
+        <input type="text" id="texto" placeholder="Escribe algo..." oninput="contarCaracteres()"/>
+        <p id="resultado">Caracteres: 0</p>
+    </secction>
+
+    <section>
+        <h1>Cambiar color de letras segun la seleccion</h1>
+        <select id="colores">
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="azul">Azul</option>
+            <option value="amarillo">Amarillo</option>
+            <option value="morado">Morado
+            </option>
+            </select>
+        <p id="textoColores">Este texto cambia de color</p>
+        <script>
+            const select = document.getElementById('colores');
+            const textoColores = document.getElementById('textoColores');
+
+            select.addEventListener('change', function() {
+                textoColores.style.color = this.value;
+            });
+        </script>
+    </section>
+
+    <section>   
+        <h1>mostrar numeros pares de 1 a N</h1>
+        <input type="number" id="numero" placeholder="Introduce un número" />
+        <button onclick="mostrarPares()">Mostrar Pares</button>
+        <p id="resultadoPares"></p>
+        <script>
+            function mostrarPares() {
+                const numero = parseInt(document.getElementById('numero').value);
+                let resultado = '';
+                for (let i = 1; i <= numero; i++) {
+                    if (i % 2 === 0) {
+                        resultado += i + ' ';
+                    }
+                }
+                document.getElementById('resultadoPares').innerText = resultado.trim();
+            }
+        </script>
+    </section>
+  </body>
+</html>
